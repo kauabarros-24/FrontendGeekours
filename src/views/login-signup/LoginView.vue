@@ -1,236 +1,82 @@
 <script setup>
+import { RouterLink } from 'vue-router';
+import Logo from '@/components/icons/logogeekours.vue';
+import google from '@/components/icons/google.vue';
+import Facebook from '@/components/icons/facebook.vue';
+import x from '@/components/icons/x.vue';
 
-    import google from '@/components/icons/google.vue';
-    import Facebook from '@/components/icons/facebook.vue';
-    import x from '@/components/icons/x.vue';
+const inputDefinition = {
+    /*username: {
+        type: 'text',
+        label: 'Nome de usuário',
+        placeholder: 'Digite seu nome de usuário',
+        required: true,
+    },*/
+    email: {
+        type: 'email',
+        label: 'Email',
+        placeholder: 'Digite seu email',
+        required: true,
+    },
+    password: {
+        type: 'password',
+        label: 'Senha',
+        placeholder: 'Digite sua senha',
+        required: true,
+    },
+};
 </script>
 
 <template>
-    <main>
-    <div class="part-1">
-        <div id="headerLogo">
-            <logo />
-        </div>
-
-        <div class="informations">
-            <form>
-                <div class="username all-infos">
-                    <label>Username</label>
-                    <input type="text" placeholder="Type your username" required>
+    <main class="flex flex-col items-center justify-center h-screen w-screen">
+        <div class="rounded-lg bg-gray-100 flex  items-center ">
+            <div class="w-full p-4 bg-white rounded-lg shadow-3xl">
+                <div class="logo flex justify-center p-4">
+                    <Logo class="h-14" />
                 </div>
-                <div class="password all-infos">
-                    <label>Password</label>
-                    <input type="password" placeholder="Type your password" required>
+                <div class="subtittle-cr-ac">
+                    <h1 class="text-2xl font-semibold text-center">Faça seu logIn</h1>
                 </div>
-                <div class="confirm-button">
-                    <button>
-                        <RouterLink to="/">confirm</RouterLink>
+                <form class="mt-4 space-y-4" @submit.prevent="handleSubmit">
+                    <div class="user-info">
+                        <div v-for="(input, key) in inputDefinition" :key="key">
+                            <label :for="key" class="text-sm font-medium text-gray-700">{{ input.label }}</label>
+                            <input :type="input.type" :id="key" :name="key" :placeholder="input.placeholder"
+                                class="w-full px-4 py-2 mt-2 text-gray-700 bg-gray-200 rounded-lg focus:outline-none focus:bg-white focus:ring-2 focus:ring-blue-600"
+                                :required="input.required" />
+                        </div>
+                    </div>
+                    <div class="forgot-password">
+                        <RouterLink to="/forgot-password" class="text-sm text-blue-600">Esqueceu sua senha?</RouterLink>
+                    </div>
+                    <button type="submit"
+                        class="w-full px-4 py-2 text-sm font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
+                        Entrar
                     </button>
-                </div>
-            </form>
 
-            <div class="all-othersigUp">
-                <div class="others-SigOptitt">
-                    <div class="detail"></div>
-                    <div class="choose">or</div>
-                    <div class="detail"></div>
-                </div>
-                <div class="signup-options">
-                    <div class="google-option">
-                        <div class="svg-op-size">
-                            <google />
+                    <div class="other-Login flex justify-between">
+                        <div class="google-op border border-gray-900  rounded-lg">
+                            <google class="h-14" />
+                        </div>
+                        
+                        <div class="facebook-op border rounded-lg  border-gray-900">
+                            <facebook class="h-14"/>
+                        </div>
+                        
+                        <div class="x-op border rounded-lg border-black  border-gray-900">
+                            <x class="h-14"/>
                         </div>
                     </div>
-                    <div class="facebook-option">
-                        <div class="svg-op-size">
-                            <Facebook />
-                        </div>
-                    </div>
-                    <div class="X-option">
-                        <div class="svg-op-size">
-                            <x />
-                        </div>
-                    </div>
+                </form>
+                <div class="cr-account">
+                    <p class="mt-4 text-sm text-center text-gray-600">
+                        Ainda não tem uma conta? <RouterLink to="/signup" class="text-blue-600">Cadastre-se!
+                        </RouterLink>
+                    </p>
                 </div>
             </div>
         </div>
-        <div class="create-account">
-            <h3>Don't have account?<RouterLink to="/Signup">Create Account</RouterLink></h3>
-        </div>
-    </div>
-
-    <div class="middle">
-        <!--middle line-->
-    </div>
-
-    <div class="part-2">
-        <!--astronauta image-->
-    </div>
-</main>
+    </main>
 </template>
 
-<style>
-
-main {
-    display: flex;
-}
-
-.part-1 {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 54.85vw;
-    height: 100vh;
-}
-
-.middle {
-    width: 0.1vw;
-    height: 100vh;
-    background-color: black;
-}
-
-.part-2 {
-    background-image: url('../components/images/astronauta.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-    width: 45.15vw;
-}
-
-/*logo*/
-
-#headerLogo {
-    margin-top: 30px;
-    width: 200px;
-    height: 40px;
-}
-
-/*user-informations/inputs*/
-
-.informations {
-    display: flex;
-    flex-direction: column;
-    margin-top: 50px;
-}
-
-.all-infos {
-    font-size: 30px;
-    display: flex;
-    flex-direction: column;
-}
-
-.all-infos input {
-    width: 630px;
-    height: 50px;
-    border-radius: 10px;
-    border: 0.5px solid black;
-    font-size: 20px;
-    padding-left: 15px;
-}
-
-.all-infos:nth-child(n+1) {
-    margin-top: 25px;
-}
-
-.all-infos label {
-    margin-bottom: 15px;
-
-}
-
-.user-answear input {
-    width: 640px;
-    height: 50px;
-    border-radius: 10px;
-    border: 0.5px solid black;
-    font-size: 20px;
-    padding-left: 15px;
-}
-
-.confirm-button {
-    margin-top: 25px;
-}
-
-.confirm-button button {
-    width: 155px;
-    height: 40px;
-    background: none;
-    border: 0.5px solid black;
-    border-radius: 10px;
-}
-
-.confirm-button button a {
-    text-decoration: none;
-    color: black;
-    font-size: 20px;
-
-}
-
-.confirm-button button:hover {
-    cursor: pointer;
-}
-
-/*others-SigOptitt*/
-
-
-.others-SigOptitt, .signup-options {
-    display: flex;
-    justify-content: center;
-    margin-top: 100px;
-}
-
-.detail {
-    width: 200px;
-    height: 15px;
-    border: 0.5px solid black;
-    border-radius: 10px;
-}
-
-.choose {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 10px;
-    margin: 0 22px;
-    font-size: 20px;
-}
-
-/*signup-options*/
-
-.signup-options {
-    display: flex;
-    margin-top: 50px;
-    gap: 60px;
-}
-
-.google-option,
-.facebook-option,
-.X-option {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 95px;
-    height: 70px;
-    border: 0.5px solid black;
-    border-radius: 10px;
-}
-
-.google-option:hover,
-.facebook-option:hover,
-.X-option:hover {
-    cursor: pointer;
-}
-
-.svg-op-size {
-    width: 50px;
-    height: 50px;
-}
-
-/*create-account*/
-
-.create-account {
-    font-size: 15px;
-    margin-top: 100px;
-}
-
-</style>
+<style></style>

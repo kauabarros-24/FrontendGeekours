@@ -48,6 +48,11 @@ const router = createRouter({
       name: 'notifications',
       component: () => import('../views/NotificationsView.vue')
     },
+    {
+      path: '/ForgotPassword',
+      name: 'forgotpassword',
+      component: () => import('../views/login-signup/ForgotPassView.vue')
+    },
   ]
 })
 export default router

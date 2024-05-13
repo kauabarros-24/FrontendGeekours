@@ -2,6 +2,9 @@
 import { ref } from 'vue';
 import { RouterLink } from 'vue-router';
 import Logo from '../../components/icons/logogeekours.vue' 
+import google from '@/components/icons/google.vue';
+import Facebook from '@/components/icons/facebook.vue';
+import x from '@/components/icons/x.vue';
 
 const userInfo = ref({
     name: '',
@@ -70,6 +73,19 @@ const inputDefinition = {
                                 :placeholder="input.placeholder"
                                 class="w-full px-4 py-2 mt-2 text-gray-700 bg-gray-200 rounded-lg focus:outline-none focus:bg-white focus:ring-2 focus:ring-blue-600"
                                 :required="input.required" />
+                        </div>
+                    </div>
+                    <div class="other-Login flex justify-between">
+                        <div class="google-op border border-gray-900  rounded-lg">
+                            <google class="h-14" />
+                        </div>
+                        
+                        <div class="facebook-op border rounded-lg  border-gray-900">
+                            <facebook class="h-14"/>
+                        </div>
+                        
+                        <div class="x-op border rounded-lg border-black  border-gray-900">
+                            <x class="h-14"/>
                         </div>
                     </div>
                     <button type="submit"
