@@ -1,5 +1,5 @@
 <script setup>
-    import logo from '@/components/icons/logo.vue';
+
     import google from '@/components/icons/google.vue';
     import Facebook from '@/components/icons/facebook.vue';
     import x from '@/components/icons/x.vue';
@@ -24,7 +24,7 @@
                 </div>
                 <div class="confirm-button">
                     <button>
-                        <RouterLink to="/login">confirm</RouterLink>
+                        <RouterLink to="/">confirm</RouterLink>
                     </button>
                 </div>
             </form>
@@ -55,7 +55,7 @@
             </div>
         </div>
         <div class="create-account">
-            <h3>Don't have account?<RouterLink to="/signup">Create Account</RouterLink></h3>
+            <h3>Don't have account?<RouterLink to="/Signup">Create Account</RouterLink></h3>
         </div>
     </div>
 

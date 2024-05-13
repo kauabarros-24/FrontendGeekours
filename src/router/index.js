@@ -11,12 +11,42 @@ const router = createRouter({
     {
       path: '/Login',
       name: 'login',	
-      component: () => import('../views/LoginView.vue')
+      component: () => import('../views/login-signup/LoginView.vue')
     },
     {               
-      path: '/signUp',
+      path: '/SignUp',
       name: 'signup',	
-      component: () => import('../views/SignUpView.vue')
+      component: () => import('../views/login-signup/SignUpView.vue')
+    },
+    {               
+      path: '/GeekStore',
+      name: 'geekstore',	
+      component: () => import('../views/GeekSoreView.vue')
+    },
+    {               
+      path: '/Messages',
+      name: 'messages',	
+      component: () => import('../views/MessagesView.vue')
+    },
+    {
+      path: '/Profile',
+      name: 'profile',
+      component: () => import('../views/ProfileView.vue')
+    },
+    {
+      path: '/Settings',
+      name: 'settings',
+      component: () => import('../views/SettingsView.vue')
+    },
+    {
+      path: '/Community',
+      name: 'community',
+      component: () => import('../views/CommunityView.vue')
+    },
+    {
+      path: '/Notifications',
+      name: 'notifications',
+      component: () => import('../views/NotificationsView.vue')
     },
   ]
 })
