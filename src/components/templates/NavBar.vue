@@ -27,7 +27,7 @@ const MenuIcons = [
    },
    {
       icon: notification,
-      link: "/notification",
+      link: "/notifications",
    },
    {
       icon: profile,
@@ -36,36 +36,28 @@ const MenuIcons = [
    {
       icon: settings,
       link: "/settings",
-   }
+   },
 ]
 
 </script>
 
 <template>
-<main class="w-screen h-screen overflow-hidden" >
-   <div class="h-screen w-28 shadow-sm shadow-slate-400">
-      <div class="flex justify-center items-center w-28 ">
+   <nav class="h-screen w-1/4 min-w-20 max-h-screen max-w-16 shadow-sm shadow-slate-400 flex flex-col">
+      <div class="mx-auto flex items-center justify-center h-20">
          <RouterLink to="/">
-            <miniLogoGeekours class="w-10 my-10"/>
+            <miniLogoGeekours class="h-14" />
          </RouterLink>
       </div>
-      <div v-for="(item, index) in MenuIcons" :key="index" class="MenuICons flex flex-col">
-         <div class="flex flex-col items-center justify-center mt-auto py-3">
+
+      <div v-for="(item, index) in MenuIcons" :key="index" class="teste flex flex-col">
+         <div class="flex flex-col items-center justify-center py-3">
             <RouterLink :to="item.link">
                <component :is="item.icon" />
             </RouterLink>
          </div>
       </div>
-   </div>
-</main>
+   </nav>
 </template>
 
-<style>
-.MenuICons:nth-last-child(1){
-   display: flex;
-   max-height: 390px;
-   height: 100%;
-   justify-content: baseline;
-   align-items: center;
-}
+<style scoped>
 </style>
