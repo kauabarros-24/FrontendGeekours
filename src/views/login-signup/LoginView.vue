@@ -15,7 +15,7 @@
         <div class="informations">
             <form>
                 <div class="username all-infos">
-                    <label>Username</label>
+                    <label>Email</label>
                     <input type="text" placeholder="Type your username" required>
                 </div>
                 <div class="password all-infos">
