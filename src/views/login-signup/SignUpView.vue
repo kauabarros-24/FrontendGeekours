@@ -5,6 +5,8 @@ import Logo from '../../components/icons/logogeekours.vue'
 import google from '@/components/icons/google.vue';
 import Facebook from '@/components/icons/facebook.vue';
 import x from '@/components/icons/x.vue';
+import { data } from 'autoprefixer';
+import axios from 'axios';
 
 const userInfo = ref({
     name: '',
@@ -52,6 +54,9 @@ const inputDefinition = {
         placeholder: 'Confirme sua senha',
         required: true,
     },
+    //Conexão com o backend
+
+
 };
 </script>
 
@@ -109,3 +114,23 @@ main {
     background-size: cover;
 }
 </style>
+
+<script>
+//Conexão com o backend:
+export default {
+    data() {
+        return {
+            dados: null
+        };
+    },
+    created() {
+        axios.post('http://127.0.0.1:8000/api/register')
+        .then(response => {
+            this.dados = response.data;
+        })
+        .catch(error => {
+            console.error('Erro ao enviar os dados')
+        })
+    }
+}
+</script>
