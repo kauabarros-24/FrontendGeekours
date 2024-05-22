@@ -56,3 +56,6 @@ const router = createRouter({
   ]
 })
 export default router
+
+
+//Conexão com o backend em django
