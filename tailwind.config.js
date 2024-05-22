@@ -9,6 +9,12 @@ export default {
       boxShadow: {
         '3xl': 'rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;',
       },
+      width: {
+        '500': '500px',
+      },
+      height: {
+        '500': '500px',
+      },
     },
   },
   plugins: [],
