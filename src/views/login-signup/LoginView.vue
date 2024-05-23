@@ -2,6 +2,7 @@
     import google from '@/components/icons/google.vue';
     import Facebook from '@/components/icons/facebook.vue';
     import x from '@/components/icons/x.vue';
+    import logo from '@/components/icons/logo/logogeekours.vue';
 </script>
 
 <template>
@@ -54,7 +55,7 @@
             </div>
         </div>
         <div class="create-account">
-            <h3>Don't have account?<RouterLink to="/Signup">Create Account</RouterLink></h3>
+<h3>Don't have account?<RouterLink to="/signup">Create Account</RouterLink></h3>
         </div>
     </div>
 

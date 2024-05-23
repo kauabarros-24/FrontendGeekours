@@ -1,26 +1,16 @@
 <script setup>
+
 import Logogeekours from '@/components/icons/logogeekours.vue';
 import x from '../../components/icons/x.vue';
 import google from '../../components/icons/google.vue';
 import facebook from '../../components/icons/facebook.vue';
 
+
 const inputDefinition = {
-    name: {
-        type: 'text',
-        label: 'Nome',
-        placeholder: 'Digite seu nome',
-        required: true,
-    },
     username: {
         type: 'text',
         label: 'Usuário',
         placeholder: 'Digite seu usuário',
-        required: true,
-    },
-    phone: {
-        type: 'tel',
-        label: 'Telefone',
-        placeholder: 'Digite seu telefone',
         required: true,
     },
     password: {
@@ -29,10 +19,10 @@ const inputDefinition = {
         placeholder: 'Digite sua senha',
         required: true,
     },
-    password_confirmation: {
+    passwordConfirm: {
         type: 'password',
-        label: 'Confirmação de senha',
-        placeholder: 'Confirme sua senha',
+        label: 'Confirme sua senha',
+        placeholder: 'Digite sua senha novamente',
         required: true,
     },
 };
@@ -78,6 +68,7 @@ const inputDefinition = {
                                 <x class="w-16 h-16 p-3" />
                             </div>
                         </div>
+
                     </div>
                 </form>
             </div>
@@ -85,14 +76,10 @@ const inputDefinition = {
 
             </div>
             <div class="bg-image h-full w-2/5  rounded-lg">
-
-            </div>
-        </div>
-    </main>
-</template>
-
-<style scoped>
+<style>
 .bg-image {
+    width: 40%;
+    height: 100vh;
     background-image: url('../../components/images/astronauta.jpg');
     background-size: cover;
     background-position: center;
