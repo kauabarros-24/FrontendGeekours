@@ -1,5 +1,5 @@
 <script setup>
-import Logogeekours from '../../components/icons/logogeekours.vue';
+import logogeekours from '../../components/icons/logo/logogeekours.vue';
 </script>
 
 <template>
@@ -38,11 +38,12 @@ import Logogeekours from '../../components/icons/logogeekours.vue';
         <div v-else class="">
 
         </div>
+
     </main>
 </template>
 
 <style scoped>
 .supemail{
     color: blue;
-}
+
 </style>
