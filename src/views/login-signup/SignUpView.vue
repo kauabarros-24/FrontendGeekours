@@ -1,19 +1,8 @@
 <script setup>
-import { ref } from 'vue';
-import { RouterLink } from 'vue-router';
-import Logo from '../../components/icons/logogeekours.vue' 
-import google from '@/components/icons/google.vue';
-import Facebook from '@/components/icons/facebook.vue';
-import x from '@/components/icons/x.vue';
-
-const userInfo = ref({
-    name: '',
-    username: '',
-    email: '',
-    phone: '',
-    password: '',
-    password_confirmation: '',
-});
+import Logogeekours from '@/components/icons/logogeekours.vue';
+import x from '../../components/icons/x.vue';
+import google from '../../components/icons/google.vue';
+import facebook from '../../components/icons/facebook.vue';
 
 const inputDefinition = {
     name: {
@@ -24,14 +13,8 @@ const inputDefinition = {
     },
     username: {
         type: 'text',
-        label: 'Nome de usuário',
-        placeholder: 'Digite seu nome de usuário',
-        required: true,
-    },
-    email: {
-        type: 'email',
-        label: 'Email',
-        placeholder: 'Digite seu email',
+        label: 'Usuário',
+        placeholder: 'Digite seu usuário',
         required: true,
     },
     phone: {
@@ -53,59 +36,65 @@ const inputDefinition = {
         required: true,
     },
 };
+
 </script>
 
 <template>
-    <main class="flex flex-col items-center justify-center h-screen w-screen">
-        <div class="rounded-lg bg-gray-100 flex  items-center">
-            <div class="w-full p-4 bg-white rounded-lg shadow-3xl">
-                <div class="logo flex justify-center p-4">
-                    <Logo class="h-14"/>
+    <main class="w-screen h-screen flex justify-center items-center">
+        <div class="flex w-2/4 h-3/4 shadow-3xl  rounded-lg">
+            <div class="w-3/5 h-full ">
+                <div class="logo flex justify-center mb-5/1">
+                    <Logogeekours class="w-48 p-4" />
                 </div>
-                <div class="subtittle-cr-ac">
-                    <h1 class="text-2xl font-semibold text-center">Crie sua conta</h1>
-                </div>
-                <form class="mt-4 space-y-4" @submit.prevent="handleSubmit">
-                    <div class="user-info">
-                        <div v-for="(input, key) in inputDefinition" :key="key">
-                            <label :for="key" class="text-sm font-medium text-gray-700">{{ input.label }}</label>
-                            <input v-model="userInfo[key]" :type="input.type" :id="key" :name="key"
-                                :placeholder="input.placeholder"
-                                class="w-full px-4 py-2 mt-2 text-gray-700 bg-gray-200 rounded-lg focus:outline-none focus:bg-white focus:ring-2 focus:ring-blue-600"
-                                :required="input.required" />
+                <form action="">
+                    <div v-for="(input, key) in inputDefinition" :key="key"
+                        class="flex flex-col justify-center items-center mt-3">
+                        <label :for="key" class="text-base font-medium text-gray-700 w-3/4">{{ input.label }}</label>
+                        <input :type="input.type" :id="key" :name="key" :placeholder="input.placeholder"
+                            class="w-3/4 px-4 py-2 mt-2 text-gray-700 bg-gray-200 rounded-lg focus:outline-none focus:bg-white focus:ring-2 focus:ring-blue-600"
+                            :required="input.required" />
+                    </div>
+                    <div class="w-full flex justify-center items-center">
+                        <div class="flex justify-end w-3/4">
+                            <button type="submit" class=" bg-blue-600 rounded-md mt-2 text-base px-4 bold">Enviar</button>
                         </div>
                     </div>
-                    <div class="other-Login flex justify-between">
-                        <div class="google-op border border-gray-900  rounded-lg">
-                            <google class="h-14" />
-                        </div>
-                        
-                        <div class="facebook-op border rounded-lg  border-gray-900">
-                            <facebook class="h-14"/>
-                        </div>
-                        
-                        <div class="x-op border rounded-lg border-black  border-gray-900">
-                            <x class="h-14"/>
+                    <div class="flex justify-center social-signup w-full h-full mt-3">
+                        <div class="flex flex-row items-center w-3/4">
+                            <div class="w-full h-1 bg-black"></div>
+                            <div class="px-4">or</div>
+                            <div class="w-full h-1 bg-black"></div>
                         </div>
                     </div>
-                    <button type="submit"
-                        class="w-full px-4 py-2 text-sm font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
-                        Cadastrar
-                    </button>
+                    <div class="w-full flex justify-center">
+                        <div class="flex w-3/4 justify-between ">
+                            <div class="">
+                                <google class="w-16 h-16 p-3" />
+                            </div>
+                            <div class="">
+                                <facebook class="w-16 h-16 p-3" />
+                            </div>
+                            <div class="">
+                                <x class="w-16 h-16 p-3" />
+                            </div>
+                        </div>
+                    </div>
                 </form>
-                <p class="mt-4 text-sm text-center text-gray-600">
-                    Já tem uma conta? <RouterLink to="/login" class="text-blue-600">Faça login</RouterLink>
-                </p>
+            </div>
+            <div class="w-px h-full bg-black">
+
+            </div>
+            <div class="bg-image h-full w-2/5  rounded-lg">
+
             </div>
         </div>
     </main>
 </template>
 
-<style>
-main {
-    background-image: url('');
-    background-position: center;
-    background-repeat: no-repeat;
+<style scoped>
+.bg-image {
+    background-image: url('../../components/images/astronauta.jpg');
     background-size: cover;
+    background-position: center;
 }
 </style>
