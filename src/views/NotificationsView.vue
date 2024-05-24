@@ -2,9 +2,7 @@
 import NavBar from '../components/templates/NavBar.vue'
 </script>
 
-<template>
    <main class="flex w-full h-screen">
-
       <NavBar />
 
       <div>
@@ -15,5 +13,7 @@ import NavBar from '../components/templates/NavBar.vue'
 
 </template>
 
+
 <style scoped>
+
 </style>

@@ -13,6 +13,9 @@ const userSignUp = ref({
     passwordConfirm: '',
 });
 
+console.log(userSignUp);
+
+
 const inputDefinition = {
     username: {
         type: 'text',
@@ -44,7 +47,7 @@ const inputDefinition = {
 
 <template>
     <main class="w-screen h-screen flex justify-center items-center">
-        <div class="flex w-2/4 h-3/4 shadow-3xl  rounded-lg">
+        <div class="flex w-2/4 h-3/4 shadow-4xl  rounded-lg">
             <div class="w-3/5 h-full ">
                 <div class="logo flex justify-center mb-5/1">
                     <Logogeekours class="w-48 p-4" />
@@ -55,6 +58,7 @@ const inputDefinition = {
                         <label :for="key" class="text-base font-medium text-gray-700 w-3/4">{{ input.label }}</label>
                         <input :type="input.type" :id="key" :name="key" :placeholder="input.placeholder"
                             v-model="userSignUp[key]"
+
                             class="w-3/4 px-4 py-2 mt-2 text-gray-700 bg-gray-200 rounded-lg focus:outline-none focus:bg-white focus:ring-2 focus:ring-blue-600"
                             :required="input.required" />
                     </div>
@@ -103,22 +107,24 @@ const inputDefinition = {
                 </form>
             </div>
             <div class="w-px h-full bg-black">
-
+                <img src="" alt="">
             </div>
             <div class="bg-image h-full w-2/5  rounded-lg">
+
 
             </div>
         </div>
     </main>
 </template>
 
-<style>
 .bg-image {
     width: 40%;
     height: 100%;
     background-image: url('../../components/images/astronauta.jpg');
     background-size: cover;
+    background-repeat: no-repeatr;
     background-position: center;
+    border-radius: 0px 8px 8px 0px;
 }
 
 .Al-account {

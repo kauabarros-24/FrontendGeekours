@@ -60,4 +60,5 @@ const MenuIcons = [
 </template>
 
 <style scoped>
+
 </style>
