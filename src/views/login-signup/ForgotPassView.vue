@@ -45,5 +45,6 @@ import logogeekours from '../../components/icons/logo/logogeekours.vue';
 <style scoped>
 .supemail{
     color: blue;
+}
 
 </style>

@@ -117,6 +117,7 @@ const inputDefinition = {
     </main>
 </template>
 
+<style scoped>
 .bg-image {
     width: 40%;
     height: 100%;
