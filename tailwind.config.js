@@ -2,15 +2,12 @@
 
 export default {
   mode: 'jit',
-  content: [
-  './public/**/*.html',
-  './src/**/*.{js,jsx,ts,tsx,vue}',
+  content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'
   ],
   theme: {
     extend: {
       boxShadow: {
-        '3xl': 'rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;',
-        '4xl' : 'rgba(17, 17, 26, 0.05) 0px 8px 32px, rgba(17, 17, 26, 0.05) 0px 16px 32px;',
+        '3xl': 'box-shadow: 0px 0px 10px 4px rgba(184,184,184,1)',
       },
       height:{
         '5/1' : '5%',
